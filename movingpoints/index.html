@@ -1,115 +1,100 @@
-<!doctype html>
-
-<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
-
+<!DOCTYPE html>
+<html>
 <head>
-
-	<meta charset="utf-8">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-	<title>EO Cues</title></title>
-	<meta name="author" content="" />
-	<meta name="description" content="A pool cue calculator for determining how a point's geometry changes as a splice is tapered down" />
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="shortcut icon" href="favicon.ico" />
-
-	<link rel="stylesheet" href="../assets/css/reset.css" />
-	<link rel="stylesheet" href="../assets/css/style.css" />
-	<link rel="stylesheet" href="../assets/css/movingpoints2.css" />
-
-	<script src="assets/js/libs/prefixfree.min.js"></script>
+    <title>Pool Cue Cutting Simulation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+	
+	
+	
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
-	
-
+  <link rel="stylesheet" href="/assets/index-b67a58b8.css">
 </head>
 
-<body onload="drawCue();">
 
 <div class="wrapper point-calculator">
-<form id="dowelForm">
-<div class="leftcolumn">
-	<header>
+<form id="parametersForm">
+			<div class="leftcolumn">
+				<header> 
+					<h1><a href="https://www.eocues.com"><img src="/assets/eo-163b14b7.png" alt="EO Cues"></img></a></h1>
+				</header> 
 
-		<h1><img src="../assets/img/eo.png" alt="EO Cues"</img></h1>
-
-		<nav>
-
-		</nav>
-
-	</header> 
-
-	<article>
-			
-		
+				<article>
 			
 				<span class="blanksection">
-					<h2>Blank/Dowel Details</h2>
-			
-				  <label for="length">Length of the blank/dowel:</label><br>
-				  <input type="number" id="length" class="activeinput" name="length" step="0.01" value="12"><br>
-				  <label for="topDiameter">Top diameter of the blank/dowel :</label><br>
-				  <input type="number" id="topDiameter" name="topDiameter" step="0.01" value="1"><br>
-				  <label for="bottomDiameter">Bottom diameter of the blank/dowel :</label><br>
-				  <input type="number" id="bottomDiameter" name="bottomDiameter" step="0.01" value="1.2"><br>
-				 <h2>Point Details</h2>
-				  <label for="cutLength">Splice length:</label><br>
-				  <input type="number" id="cutLength" name="cutLength" step="0.01" value="10.5"><br>
-				  <label for="cutDepthStart">Depth of cut (Start):</label><br>
-				  <input type="number" id="cutDepthStart" name="cutDepthStart" step="0.01" value="0"><br>
-				  <label for="cutDepthEnd">Depth of cut (End) :</label><br>
-				  <input type="number" id="cutDepthEnd" name="cutDepthEnd" step="0.01" value="0.7"><br>
+					<div class="blankdetails">
+						<h2>Blank/Dowel Details</h2>
+						
+						<div class="inputcolumn">
+							<label for="topDiameter">Starting joint
+							<span class="tooltip-container">
+								<i class="tooltip-icon">?</i>
+								<div class="tooltip-content">Starting Joint<hr> The joint diameter of your blank/dowel when you cut in your points.	
+								</div>
+							</span>
+							</label>
+							<input id="topDiameter" type="number" step="any" value="0.970">
+						</div>
+						<div class="inputcolumn">
+							<label for="finalTopDiameter">Final Joint </label>
+							<input id="finalTopDiameter" type="number" step="any" value="0.840">
+						</div>
+						<div class="inputcolumn">
+						<label for="taperPerInch">Taper/inch 
+							<div class="buttFinalSizeContainer">(Butt diam at 29":<span id="buttFinalSize"></span>)</div>
+						</label>
+						<input id="taperPerInch" type="number" step="any" value="0.013">
+						</div>
+						<div class="inputcolumn">
+						<label for="length">Length</label>
+						<input id="length" type="number" step="any" value="12">
+						</div>
+					</div>
+					<div class="splicedetails">
+						<h2>Splice Details</h2>
+						<div class="splicecolumn">
+						<label for="spliceLength">Splice Length</label>
+						<input id="spliceLength" type="number" step="any" value="10">
+						</div>
+						<div class="splicecolumn">
+						<label for="spliceDepth">Splice Depth</label>
+						<input id="spliceDepth" type="number" step="any" value="0.5">
+						<div id="spliceDepthWarning" style="display: none; color: red;">You're cutting through the forearm!</div>
+						</div>
+					</div>
+
+					
 				</span>
 				  
 				  <p id="pointReduction"></p>
-            <!--<div class="input">
-                <input type="text" id="startingDiameter" placeholder="Starting Diameter (e.g., 0.979)" />
-                <input type="text" id="endingDiameter" placeholder="Ending Diameter (e.g., 1.1)" />
-                <input type="text" id="length" placeholder="Length of Forearm (e.g., 12)" />
-                <input type="text" id="lengthOfSplice" placeholder="Length of Splice (e.g., 10)" />
-                <input type="text" id="startDepth" pslaceholder="Starting Depth of Splice (e.g., 0)" />
-                <input type="text" id="endDepth" placeholder="Ending Depth of Splice (e.g., 0.5)" />
-				<p>Final Diameter 1 (in inches): <input id="finalStartingDiameter" type="text"></p>
-				<p>Final Diameter 2 (in inches): <input id="finalEndingDiameter" type="text"></p>
-				<p id="pointReduction"></p>
-            </div>-->
+
 			</div>
 			<div class="middlecolumn">
 				<div class="spacer"></div>
 				
-				<div class="troubleshooting">
-				For troubleshooting<br><br>
-				Initial triangle height: <span id="initialTriangleHeight"></span>
-				<br>
-				Initial triangle width: <span id="initialTriangleWidth"></span><br>
-				Final triangle height: <span id="finalTriangleHeight"></span><br>
-				Final triangle width: <span id="finalTriangleWidth"></span><br>
+				<div class="canvas-container">
+					<div class="canvasisstupid">
+						<canvas id="canvas1" width="200" height="600"></canvas>
+						<div class="cutinhalf">
+							<span id="icon1"><span id="height1"></span></span>
+						</div>
+					</div>
 				</div>
-				
-				<div class="cuecanvas">
-					<canvas id="cueCanvas"></canvas>
-				</div>
-				<div class="cuecanvas2">
-					<canvas id="cueCanvas2"></canvas>
+				<div class="canvas-container2">
+					<div class="canvasisstupid">
+						<canvas id="canvas2" width="200" height="600"></canvas>
+						<div class="cutinhalf">
+							<span id="icon2"><span id="height2"></span></span>
+						</div>
+					</div>
 				</div>
 			
 			</div>
-			<div class="rightcolumn">
-				<label for="finalTopDiameter">Final top diameter :</label><br>
-				  <input type="number" id="finalTopDiameter" name="finalTopDiameter" step="0.01" value=".830"><br>
-				  <label for="finalBottomDiameter">Final bottom diameter :</label><br>
-				  <input type="number" id="finalBottomDiameter" name="finalBottomDiameter" step="0.01" value="1"><br>
-			</div>
-        </div>
+			
+		
+
 		
 	</article>
 
@@ -123,10 +108,10 @@
 </form>
 </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../assets/js/pointcalc3.js"></script>
 
 
-
+<body>
+  
+    <script src="script.js"></script>
 </body>
 </html>
