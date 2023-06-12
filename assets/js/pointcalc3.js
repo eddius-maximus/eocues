@@ -109,6 +109,7 @@ lengthInput.addEventListener('input', drawCue);
 spliceLengthInput.addEventListener('input', drawCue);
 cutDepthStartInput.addEventListener('input', drawCue);
 cutDepthEndInput.addEventListener('input', drawCue);
+cutDepthEndInput.addEventListener('input', drawCue2);
 finalTopDiameterInput.addEventListener('input', drawCue);
 finalBottomDiameterInput.addEventListener('input', drawCue);
 
@@ -212,7 +213,7 @@ let triangleTopY = length * scale2 - scaledTriangleHeight;
 	
 
 // Draw the triangle
-ctx2.fillStyle = "red"; // set the fillStyle to red for visibility
+ctx2.fillStyle = "black"; // set the fillStyle to red for visibility
   ctx2.beginPath();
   ctx2.moveTo(canvas2.width / 2, triangleTopY);
   ctx2.lineTo((canvas2.width / 2) - (scaledTriangleWidth / 2), triangleTopY + scaledTriangleHeight);
