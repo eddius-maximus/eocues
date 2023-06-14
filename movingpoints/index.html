@@ -12,8 +12,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/movingpoints/assets/index-934722a9.js"></script>
-  <link rel="stylesheet" href="/movingpoints/assets/index-2fce74d6.css">
+  <script type="module" crossorigin src="/movingpoints/assets/index-c403e587.js"></script>
+  <link rel="stylesheet" href="/movingpoints/assets/index-fedf2ece.css">
 </head>
 
 
@@ -41,28 +41,53 @@
 							<input id="topDiameter" type="number" step="any" value="0.970">
 						</div>
 						<div class="inputcolumn">
-							<label for="finalTopDiameter">Final Joint </label>
+							<label for="finalTopDiameter">Final Joint 
+							<span class="tooltip-container">
+								<i class="tooltip-icon">?</i>
+								<div class="tooltip-content">Final Joint<hr> The joint diameter of your cue when completed	
+								</div>
+							</span>
+							</label>
 							<input id="finalTopDiameter" type="number" step="any" value="0.840">
 						</div>
 						<div class="inputcolumn">
 						<label for="taperPerInch">Taper/inch 
+								<span class="tooltip-container">
+								<i class="tooltip-icon">?</i>
+								<div class="tooltip-content">Taper per Inch<hr> Butt diameter minus joint diameter divided by length of cue in inches. (1.25 - .850) / 29, for example.	
+								</div>
+							</span>						
 							<div class="buttFinalSizeContainer">(Butt diam at 29":<span id="buttFinalSize"></span>)</div>
 						</label>
 						<input id="taperPerInch" type="number" step="any" value="0.013">
 						</div>
 						<div class="inputcolumn">
-						<label for="length">Length</label>
+						<label for="length">Length 
+						<span class="tooltip-container">
+								<i class="tooltip-icon">?</i>
+								<div class="tooltip-content">Length<hr>The length of your forearm in inches
+								</div>
+							</span></label>
 						<input id="length" type="number" step="any" value="12">
 						</div>
 					</div>
 					<div class="splicedetails">
 						<h2>Splice Details</h2>
 						<div class="splicecolumn">
-						<label for="spliceLength">Splice Length</label>
+						<label for="spliceLength">Splice Length <span class="tooltip-container">
+								<i class="tooltip-icon">?</i>
+								<div class="tooltip-content">Splice Length<hr>The length of your cut with V-Groove bit (in inches)	
+								</div>
+							</span></label>
 						<input id="spliceLength" type="number" step="any" value="10">
 						</div>
 						<div class="splicecolumn">
-						<label for="spliceDepth">Splice Depth</label>
+						<label for="spliceDepth">Splice Depth 
+						<span class="tooltip-container">
+								<i class="tooltip-icon">?</i>
+								<div class="tooltip-content">Splice Depth<hr>Assuming the start of your cut is just touching wood, this is the measurement of how deep your cutter plunges.
+								</div>
+							</span></label>
 						<input id="spliceDepth" type="number" step="any" value="0.5">
 						<div id="spliceDepthWarning" style="display: none; color: red;">You're cutting through the forearm!</div>
 						</div>
