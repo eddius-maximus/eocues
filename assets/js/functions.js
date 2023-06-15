@@ -7,41 +7,25 @@ function initPage(){
 	const showGalleryButton = document.getElementById('show-gallery');
 
 	let translateX = 0;
-	const imageWidth = 250;
-	const numImages = gallery.children.length;
-
-	arrowLeft.addEventListener("click", () => {
-	  if (translateX < 0) {
-		translateX += imageWidth + 20;
-		gallery.style.transform = `translateX(${translateX}px)`;
-	  }
-	});
-
-	arrowRight.addEventListener("click", () => {
-	  if (translateX > -(numImages - 4) * (imageWidth + 20)) {
-		translateX -= imageWidth + 20;
-		gallery.style.transform = `translateX(${translateX}px)`;
-	  }
-	});
-
-	const overlay = document.querySelector(".overlay");
-	const overlayImage = document.createElement("img");
-	overlayImage.classList.add("overlay-image");
-	overlay.appendChild(overlayImage);
-
-	gallery.addEventListener("click", (event) => {
-	  if (event.target.tagName === "IMG") {
-		overlayImage.src = event.target.src;
-		overlay.classList.add("active");
-	  }
-	});
-
-	overlay.addEventListener("click", () => {
-	  overlay.classList.remove("active");
-	});
 	
 	$( "#show-gallery" ).on( "click", function() {
 	  $( '#gallery-container' ).toggleClass( "show" );
 	});
+
+	var $carousel = $('.slider').flickity({
+	  // options
+	  cellAlign: 'left',
+	  contain: true,
+	  fullscreen: true,
+	  wrapAround: true
+	});
+
+	 $carousel.on( 'staticClick.flickity', function( event, pointer, cellElement, cellIndex ) {
+        if ( !cellElement ) {
+            return;
+        }
+        $carousel.flickity( 'viewFullscreen' );
+    });
+
 
 };

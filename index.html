@@ -21,8 +21,10 @@
 	<link rel="shortcut icon" href="favicon.ico" />
 
 	<link rel="stylesheet" href="assets/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/slick-lightbox.css">
 	<link rel="stylesheet" href="assets/css/style.css" />
-
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@1/fullscreen.css">
 	<script src="assets/js/libs/prefixfree.min.js"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,31 +55,92 @@
 		
 		<div class="overflow-hidden">
 			<div id="gallery-container" class="gallery-container">
-			  <div class="gallery">
-				<img class="squarethumb" src="assets/img/cue1.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue2.5.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue2.6.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue2.7.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue2.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue3.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue4.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue5.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue6.jpg"] alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue7.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue8.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue9.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue10.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue10.5.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue11.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue12.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue13.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue14.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue15.jpg" alt="Image 1" />
-				<img class="squarethumb" src="assets/img/cue16.jpg" alt="Image 1" />
+				<div class="slider">
+					<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue1.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue2.5.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue2.6.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue2.7.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue2.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue3.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue4.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue5.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue6.jpg"] alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue7.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue8.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue9.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue10.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue10.5.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue11.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue12.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue13.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue14.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue15.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue16.jpg" alt="Image 1" /></div>
+					</div>
+			  <!-- <div class="gallery">
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue1.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue2.5.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue2.6.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue2.7.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue2.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue3.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue4.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue5.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue6.jpg"] alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue7.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue8.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue9.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue10.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue10.5.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue11.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue12.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue13.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue14.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue15.jpg" alt="Image 1" /></div>
+				
+				<div class="carousel-cell"><img class="squarethumb" src="assets/img/cue16.jpg" alt="Image 1" /></div>
 			  </div>
 			  <button class="arrow-left">&#8249;</button>
 			  <button class="arrow-right">&#8250;</button>
-			  <div class="overlay"></div>
+			  <div class="overlay"></div> -->
 			</div>
 		</div>
 		
@@ -95,13 +158,13 @@
 		<p>Do you have a website?</p>
 		<p class="answer">Not really. YouTube is my thing.</p>
 		<p>How much do your cues cost?</p>
-		<p class="answer">Typically $1,700 and up</p>
+		<p class="answer">It depends. Starting around $1,800 would be a good fuzzy ballpark</p>
 		<p>What determines price?</p>
-		<p class="answer">Wood rarity. Number of points. Number of inlays. Inlay material. Design complexity. Time invested</p>
+		<p class="answer">Materials and time</p>
 		<p>I want a custom cue. How long is the wait?</p>
 		<p class="answer">A very long time</p>
 		<p>But I want a cue from you! Boo!</p>
-		<p class="answer">I make cues for fun alot and put them up for grabs. First come, first serve</p>
+		<p class="answer">I make cues often just for the fun of it. Those I'll put up here/YouTube and they'll be first come first serve.</p>
 		<p>How did you learn how to make cues?</p>
 		<p class="answer">I'm self taught</p>
 		<p>I think you're doing certain steps wrong!</p>
@@ -109,7 +172,7 @@
 		<p>How do your cues play?</p>
 		<p class="answer">Amazing</p>
 		<p>"eo cues"? What's the "eo" mean?</p>
-		<p class="answer">They're my initials</p>
+		<p class="answer">They're my initials. They can also stand for Executive Order, Ethylene Oxide, or Endochondral Ossification if you're weird</p>
 		<p>Where do you live?</p>
 		<p class="answer">Austin TX</p>
 		<p>How do I get in contact with you?</p>
@@ -127,9 +190,10 @@
 
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>window.jQuery || document.write("<script src='assets/js/libs/jquery-1.11.3.min.js'>\x3C/script>")</script>
-
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://unpkg.com/flickity-fullscreen@1/fullscreen.js"></script>
 <script src="assets/js/functions.js"></script>
 <script>$(document).ready(initPage);</script>
 

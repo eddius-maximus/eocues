@@ -83,6 +83,7 @@ h1 img {
   width: 100%;
   z-index: 2;
   max-height: 0;
+  padding: 0 25px;
   box-sizing: border-box;
   transition: max-height 0.5s ease-in-out; /* Add a transition effect */
 }
@@ -128,6 +129,7 @@ color: yellow;
 
 .arrow-left {
   left: 0;
+  right: auto;
   padding: 5px 20px 15px 15px;
   border-radius: 0 5px 5px 0;
 }
@@ -197,3 +199,28 @@ color: yellow;
 }
 
 
+.slider.is-fullscreen img {
+  height: auto;
+  max-height: 100%;
+  width: auto;
+}
+.flickity-fullscreen-button-view {
+  display: none !important;
+}
+
+
+
+.flickity-fullscreen-button {
+  width: 50px !important;
+  height: 50px !important;
+  right: 25px !important;
+  top: 25px !important;
+  }
+
+  .flickity-fullscreen-button .flickity-button-icon {
+  position: absolute;
+  width: 40px !important;
+  height: 40px !important;
+  left: 4px !important;
+  top: 4px !important;
+}
