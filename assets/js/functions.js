@@ -14,10 +14,11 @@ function initPage(){
 
 	var $carousel = $('.slider').flickity({
 	  // options
-	  cellAlign: 'left',
+	  cellAlign: 'center',
 	  contain: true,
+	  wrapAround: true,
 	  fullscreen: true,
-	  wrapAround: true
+	  pageDots: false
 	});
 
 	 $carousel.on( 'staticClick.flickity', function( event, pointer, cellElement, cellIndex ) {
